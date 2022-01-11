@@ -2,10 +2,7 @@
 // modules => encapsulated code (only share minimum)
 
 const names = require('./4-names')
-
-const sayHi = (name) =>{
-    console.log('hello there ' + name)
-}
+const sayHi = require('./5-utils')
 
 sayHi('beny')
 sayHi(names.john)
