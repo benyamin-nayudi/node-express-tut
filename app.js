@@ -1,23 +1,17 @@
-const path = require('path')
-// console.log(path)
+// interacting with the file system
+// we can do it synchronously and asynchronously
+
+const { readFileSync , writeFileSync } = require('fs')
+
+const first = readFileSync('./content/first.txt' ,'utf8')
+const second = readFileSync('./content/second.txt' ,'utf8')
+console.log(first , second)
 
 
-// return the file system path separator
-console.log(path.sep)
-
-// normalized and join a path with the system separator 
-const filePath = path.join('/content' , 'subfolder' , 'text.txt')
-console.log(filePath)
-
-// return the base name of the path
-const base = path.basename(filePath)
-console.log(base)
+// if the file was there it will overwrite it and if it wasn't it will create one
+writeFileSync('./content/result-sync.txt' , `here is the result ${first }  , ${second}`)
 
 
-// the __dirname return the absolute path to this current file
-// the path.resolve return an absolute path to us
-const absolute = path.resolve(__dirname , 'content' , 'subfolder' , 'test.txt')
-console.log(absolute)
 
 
 
