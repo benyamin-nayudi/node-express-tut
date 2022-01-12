@@ -33,6 +33,8 @@ const server = http.createServer((req , res ) =>{
     }
 })
 
+
+// listen method is async so it will be alive 
 server.listen(5001)
 
 
