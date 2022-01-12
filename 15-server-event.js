@@ -8,6 +8,6 @@ server.on('request' , (req , res) =>{
     res.end('welcome')
 })
 
-// even we haven't assign the emit method for the request event , a bunch of built in modules in node emit the server function
+// even we haven't assign the emit method for the request event , a bunch of built in modules in node emit the server function => the server function extends the EventEmitter class by default.
 
 server.listen(5001)
