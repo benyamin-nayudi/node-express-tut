@@ -31,8 +31,6 @@ const server = http.createServer((req , res ) =>{
         // and we can write a default end() for urls that are not available
         res.end('hii')
     }
-
-   
 })
 
 server.listen(5001)

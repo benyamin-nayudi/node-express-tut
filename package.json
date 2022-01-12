@@ -1,0 +1,23 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-intro.js",
+  "scripts": {
+    "start" : "node app.js",
+    "dev" :"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benyamin-nayudi/node-express-tut.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benyamin-nayudi/node-express-tut/issues"
+  },
+  "homepage": "https://github.com/benyamin-nayudi/node-express-tut#readme"
+}
+
+
