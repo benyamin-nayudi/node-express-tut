@@ -29,7 +29,7 @@ const server = http.createServer((req , res ) =>{
         res.end('here is our short history')
     }else{
         // and we can write a default end() for urls that are not available
-        res.end('hii')
+        res.end('this page is unavailable')
     }
 })
 
