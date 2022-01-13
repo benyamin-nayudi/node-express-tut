@@ -1,16 +1,14 @@
 const express = require('express')
 const logger = require('./8-logger')
-
+const authorize = require('./11-authorize')
 
 const app = express()
 
-// we want to add our middleware to all of our routes. 
-// app.use will invoke the given function to any routes
-// note that the order matters here , so make sure to place the app.use (or your middleware functions ) first then write your routes methods
-app.use(logger)
+// this is how we set multiple middleware functions . the order matters.
+app.use([logger , authorize])
 
-// you can also specify routes for your middleware . this one will only apply for routes that are after the '/api' route
-app.use('/api' , logger)
+
+
 
 
 app.get('/' , (req , res) =>{
@@ -26,6 +24,8 @@ app.get('/api/products'  , (req , res) =>{
 })
 
 app.get('/api/items'  , (req , res) =>{
+    // here we can get the attached object from the authorized file.
+    console.log(req.user)
     res.send('items')
 })
 
