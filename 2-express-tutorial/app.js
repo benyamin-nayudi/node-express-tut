@@ -36,7 +36,7 @@ app.get('/api/v1/query' , (req , res) =>{
     const {search , limit} = req.query;
     let sortedProducts = [...products];
 
-    // note that you must return one  response from the server so keep in mind to write 'return' in your conditions 
+    // note that you must return 'one'  response from the server so keep in mind to write 'return' in your conditions 
 
 
     // here we check the search query and return product that start with the searched query
