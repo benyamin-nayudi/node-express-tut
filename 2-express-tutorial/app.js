@@ -1,46 +1,39 @@
 const express = require('express')
+const path = require('path')
+
+
 
 const app = express();
 
+// * setup static and middleware
+/// now we can use the app.use method to serve our static files more easily. first we should make a public folder and paste all of our static files (styles , svg and js files) then here we invoke this function.
+app.use(express.static('./public'))
 
 
-//* we have some methods that we use the most:
-// app.get(path , callback (invoked every time the user perform a get request))
+// now we want to send our index.html file so we can use the sendFile method of express and provide an absolute path for it 
 app.get('/' , (req , res) =>{
-    res.send('home page')
-})
-
-app.get('/about' , (req , res) =>{
-    res.send('about page')
+    res.sendFile(path.resolve(__dirname , './navbar-app/index.html'))
 })
 
 
 
 
-//* this handles all http request (get , post ...)
-// app.all(path (* : all) , callback ) => if i can not reach the resource so i send back this.
-// we can add our status here and chain it.
+
 app.all("*" , (req , res) =>{
-    res.status(404).send('<h1>page not found</h1>')
+    res.status(404).send('page not found')
 })
 
-// app.post
-// app.put
-// app.all
-// app.delete
-// app.use
+
+
+
+
+
+
+
+
 
 
 
 app.listen(5000 , () =>{
-    console.log('server is listening on port 5000...')
+    console.log('server is running on port 5000...')
 })
-
-
-
-
-
-
-
-
-
