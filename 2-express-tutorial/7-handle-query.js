@@ -8,7 +8,7 @@ app.get('/' , (req ,res ) =>{
     res.send(`
     <h1>home page</h1> <a href="/api/products"> products </a>
     `)
-})
+}) 
 
 app.get('/api/products' , (req , res) =>{
     const rewProducts = products.map(product => {
@@ -30,7 +30,7 @@ app.get('/api/products/:productID' , (req , res)=>{
 })
 
 
-// we can get the query like this:
+// we can get the query like this:  http://localhost:5000/api/v1/query?name=2
 app.get('/api/v1/query' , (req , res) =>{
     console.log(req.query);
     const {search , limit} = req.query;
@@ -65,3 +65,5 @@ app.get('/api/v1/query' , (req , res) =>{
 app.listen(5000 , () =>{
     console.log('server running on port 5000 ....')
 })
+
+
